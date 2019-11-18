@@ -10,7 +10,6 @@ public class utility<T>
 {
 	  static Scanner sc ;
 	static Random random;
-
 	static
 	{
 		sc= new Scanner(System.in);
