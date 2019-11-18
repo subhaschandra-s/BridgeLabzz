@@ -1,9 +1,12 @@
 package com.bridgelab.Utility;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.PrintWriter;
 
 public class utility<T>
@@ -11,7 +14,7 @@ public class utility<T>
 	  static Scanner sc ;
 	static Random random;
 	static
-	{
+	{  
 		sc= new Scanner(System.in);
 		random = new Random();
 	}
@@ -654,7 +657,7 @@ merging array....
 				}
 			}
 			  if(b && ispalindrome(j))
-				  System.out.println(j+ " ");
+				  System.out.println(j + " primepalindrome ");
 		}
 	}
 	
@@ -696,7 +699,7 @@ for(int i=0;i<ar.size()-1;i++) {
 	for(int j=i+1;j<ar.size();j++) {
 		if(anagram(ar.get(i),ar.get(j)))
 		{
-			System.out.println(ar.get(i)+ " "+ar.get(j));
+			System.out.println(ar.get(i)+ " "+ar.get(j) + " primeanagram numbers");
 		}
 	}
 }
@@ -728,6 +731,76 @@ for(int i=0;i<ar.size()-1;i++) {
 	
 	  }
 	  return count;
+  }
+  
+ /*
+  Function to do the binary search the word..
+  */
+  public static  void binarysearch(String[] Sorted_arr,String find)
+  {
+          int mid=0;
+          int low=0;
+          int high=Sorted_arr.length-1;
+          while(high>=low)
+          {
+                  mid=(low+high)/2;
+
+                  if(Sorted_arr[mid].equals(find))
+                  {
+                          System.out.println("the word->"+find+" is found");
+                  break;
+                  }
+                  else if(Sorted_arr[mid].compareTo(find)<0)
+                  {
+                          low=mid+1;
+                  }
+                  else if(Sorted_arr[mid].compareTo(find)>0)
+                          high=mid-1;
+          }
+          if(high<low)
+                  System.out.println("the word->"+find+" is not found");
+
+  }
+  /*
+   function to read the file...
+   */
+  public static String readfile(String file)
+  {
+  String str="";
+  try
+  {
+  FileInputStream fir=new FileInputStream(file);
+     DataInputStream dis=new DataInputStream(fir);
+     str=dis.readLine();
+     dis.close();
+     fir.close();
+  }
+  catch(Exception e)
+  {
+  System.out.println(e);
+     }
+  System.out.println(str);
+  return str;
+
+  }
+  /*
+   finding the number 
+   @return low
+   */
+  public static int find() {
+	  int low=0, high=130,mid;
+	  while(low!=high) {
+		  mid=(low+high)/2;
+		  System.out.println("enter 1 if no is between "+ low +"-"+ mid +"\n enter 2 if no is between "+ (mid+1) +"-"+ high);
+		  int c=utility.readInt();
+	mid=(low+high)/2;
+	if(c==1)
+		high=mid;
+	else
+		low=mid+1;
+	  }
+	return high;
+	  
   }
 }
 

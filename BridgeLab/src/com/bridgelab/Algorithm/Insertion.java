@@ -15,7 +15,7 @@ public static void main(String[] args)
 	}
 	s = utility.insertionSort(s);
 	for(String st:s)
-		System.out.print(st);
+		System.out.print(st+" ");
 }
 }
 
