@@ -11,5 +11,6 @@ public static void main(String[] args)
 	int yy=utility.readInt();
 	
 	utility.dayofweek(dd,mm,yy);
+	
 }
 }

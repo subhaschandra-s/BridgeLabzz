@@ -11,8 +11,8 @@ public static void main(String[] args)
     System.out.println("enter the file name");
     file=utility.readString();
     System.out.println("enter the word to find");
-    String s[]=utility.readfile(file).split(" ");
     find=utility.readString();
+    String s[]=utility.readfile(file).split(" ");
     utility.insertionSort(s);
     for(String f:s)
     	System.out.println(f);

@@ -48,28 +48,23 @@ public class utility<T>
 	 */
 	public static void leapyr(int n)
 	{
-		if(n<999 || n>9999)
-			
+		if(n>=1000 && n<=10000)
 		{
-		
-			System.out.println("please enter the valid year");
-		}
-			
-			else if(n%400==0||n%4==0 && n%100!=0)
-			{
-				System.out.println(n+" is leap year");
-			
-			}
+		 if(n%400==0||n%4==0 && n%100!=0)	
+			System.out.println(n+" is leap year");
 			else
-			{
+			
 				System.out.println(n+" is not a leap year");
-	}
+		}
+		else
+			System.out.println("enter valid year");
+		
 	}
 	/*
 	 nth power no program
 	 */
 
-	public static void powerno(int n)
+	public static int powerno(int n)
 	{
 		int power=1;
 		for(int i=1;i<=n;i++)
@@ -77,6 +72,7 @@ public class utility<T>
 			power=2*power;
 		System.out.println(2+"^"+i+"=" +power);
 	}
+		return power;
 	}
 
 
@@ -255,20 +251,17 @@ public static int collect(int n)
  * 
  * @... amount
  */
-public static void getNotes(int amount) {
+public static int[] getNotes(int amount) {
 	int[] notes = { 1000, 500, 100, 50, 20, 10, 5, 2, 1 };
 	int[] notesCount = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	for (int i = 0; i < notes.length; i++) {
-		if (amount < 0)
-			return;
-		else if (amount >= notes[i]) {
+		if (amount >= notes[i]) {
 			notesCount[i] = amount / notes[i];
 			amount = amount % notes[i];
 		}
 	}
-	for (int i = 0; i < notes.length; i++) {
-		System.out.println(notes[i] + " notes : " + notesCount[i]);
-	}
+	return notesCount;
+	
 }
 
 /*
@@ -276,18 +269,18 @@ public static void getNotes(int amount) {
  * 
  */
 
-public static void dayofweek(int dd,int mm,int yy)  //accessing date month year
+public static int dayofweek(int dd,int mm,int yy)  //accessing date month year
 {
 	int y=yy-(14-mm)/12;					//for year
 	int x=y+y/4-y/100+y/400;  				//checks for leap year
 	int m=mm+12*((14-mm)/12)-2;				// for months...
 	int d=(dd+x+((31*m)/12))% 7;		    //gets a date here
-	//System.out.println(d);
-	
 	String a[]= {"sunday","monday","tuesday","wednesday","tursday","friday","saturday"};
 	System.out.println(a[d]);
 	String b[]= {"0","jan","feb","mar","april","may","june","july","aug","sep","oct","nov","dec"};
 	System.out.println("month--- "+b[mm]);
+	
+	return d;
 }
 /*
  @get the celsius value using formula....
@@ -428,30 +421,30 @@ public static void getArrayequal(String str1, String str2)
  @..binary search...
  ........
  */
-public static int binarySearch(String[] arr, String x) 
-{ 
-	Arrays.sort(arr);
-    int l = 0, r = arr.length - 1; 
-    while (l <= r)
-    { 
-        int m = (l+ r) / 2; 
-        int res = x.compareTo(arr[m]); 
-        if (res == 0) 
-        {
-            return m; 
-        }
-        else if (res > 0) 
-        {	
-            l = m + 1; 
-        }
-        else
-        {
-            r = m - 1; 
-        }
-    } 
-
-    return -1; 
-} 
+//public static int binarySearch(String[] arr, String x) 
+//{ 
+//	Arrays.sort(arr);
+//    int l = 0, r = arr.length - 1; 
+//    while (l <= r)
+//    { 
+//        int m = (l+ r) / 2; 
+//        int res = x.compareTo(arr[m]); 
+//        if (res == 0) 
+//        {
+//            return m; 
+//        }
+//        else if (res > 0) 
+//        {	
+//            l = m + 1; 
+//        }
+//        else
+//        {
+//            r = m - 1; 
+//        }
+//    } 
+//
+//    return -1; 
+//} 
 
 /*
  * Generic Insertion Sort algorithm
