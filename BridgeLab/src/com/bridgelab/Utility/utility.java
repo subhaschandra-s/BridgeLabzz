@@ -18,6 +18,11 @@ public class utility<T>
 		sc= new Scanner(System.in);
 		random = new Random();
 	}
+	/*
+	 Author:......
+	 Function to replace user name with full name....
+	 @return replacing the name...
+	 */
 	public static void replace(String s) //accessing the string from main method
 	{
 		String x="hi username,  how r u";
@@ -26,9 +31,9 @@ public class utility<T>
 	}
 
 	/*
-	 flip coins program
+	 Function for flip coins program
+	 @returns heads percentage and tails percentage..
 	 */
-
 	public static void flipPerc(int times)		//accessing the times to flip coin
 	{
 		double heads=0;
@@ -44,7 +49,8 @@ public class utility<T>
 	}
 
 	/*
-	leap year program
+	Function to perform leap year program
+	Performs the operation
 	 */
 	public static void leapyr(int n)
 	{
@@ -61,9 +67,9 @@ public class utility<T>
 		
 	}
 	/*
-	 nth power no program
+	Function to perform  nth power no program
+	@returns the power value...
 	 */
-
 	public static int powerno(int n)
 	{
 		int power=1;
@@ -74,30 +80,26 @@ public class utility<T>
 	}
 		return power;
 	}
-
-
+	
 	/*
-	 harmonic no program
+	Function to perform the Harmonic no program
+	@returns the nth harmonic value...
 	 */
-
 	public static void harmonic(int n)
 	{
 		double sum=0.0;
 		double s=0;
-		
 		for(int i=1;i<=n;i++)
 		{
 			sum =1.0/i;
 			System.out.println(" harmonic values is "+sum);
-		
 		 s= sum+s;
 			}
-		System.out.println("total "+s);
-		
+		System.out.println("total "+s);	
 	}
 	
 	/*
-	 prime factors
+	 Function to find the prime factors
 	 */
 	public static void primefact(int n)
 	{
@@ -107,20 +109,29 @@ public class utility<T>
 			{
 				System.out.println(i);
 				n=n/i;
-			}
-	}
-	
+				}
+	}	
 }
+	/*
+	 Accessing the Integer value from Scanner..
+	 @returns integer value..
+	 */
 	public static int  readInt()
 	{
 		return sc.nextInt();
 	}
-	
+	/*
+	 Accessing the double value from Scanner..
+	 @returns double value..
+	 */
 	public static double readDouble()
 	{
 		return sc.nextDouble();
 	}
-	
+  /*
+    Accessing the String value from Scanner..
+    @returns String value..
+ */	
 	public static String readString()
 	{
 		return sc.nextLine();
@@ -129,7 +140,6 @@ public class utility<T>
 	{
 		return sc.next();
 	}
-	
 	/*
 	 for input random value
 	 */
@@ -144,7 +154,10 @@ public class utility<T>
 		}
 		return 0;
 	}
-	
+	/*
+	 Function to read the two dimension array.
+	 @returns matrix values...
+	 */
 public static int[][] readTwoDimensionArray(int m,int n)
 {
 	int [][] mat=new int[m][n];
@@ -158,6 +171,9 @@ public static int[][] readTwoDimensionArray(int m,int n)
 	}
 	return mat;
 }
+/*
+ function to display the Matrix...
+ */
 	
 public static void dsiplayMatrix(int[][]mat)
 {
@@ -173,7 +189,6 @@ public static void dsiplayMatrix(int[][]mat)
 		pw.println();
 	}
 }
-
 /* Finding the triplets in an array whose sum is 0
 * 
 * ... array
@@ -198,7 +213,9 @@ public static int triplets(int[] array)
 	}
 	return count;
 }
-
+/*
+ Quadratic function...using formula
+ */
 public static void quadratic(double a,double b,double c)
 {
 	double delta=(b*b-4*a*c);
@@ -218,7 +235,6 @@ public static void quadratic(double a,double b,double c)
 }	
 /*
  to coupon numbers....
-
  */
 // return a random coupon between 0 and n-1
 public static int getCoupon(int n) 
@@ -233,7 +249,7 @@ public static int collect(int n)
     int count = 0;                           // number of cards collected
     int distinct  = 0;                       // number of distinct card types collected
 
-    // repeat until you've collected all n card types
+    // repeat until you have collected all n card types
     while (distinct < n) {
         int value = getCoupon(n);            // pick a random card 
         count++;                             // one more card
@@ -249,7 +265,7 @@ public static int collect(int n)
  * Finding minimum number of notes coming out for a fulfilling a particular
  * amount.
  * 
- * @... amount
+ * @returns the  notes count..
  */
 public static int[] getNotes(int amount) {
 	int[] notes = { 1000, 500, 100, 50, 20, 10, 5, 2, 1 };
@@ -260,15 +276,14 @@ public static int[] getNotes(int amount) {
 			amount = amount % notes[i];
 		}
 	}
-	return notesCount;
-	
+	return notesCount;	
 }
 
 /*
  @get the day of week 
- * 
+ Using formula...
+ @returns the day of the week... 
  */
-
 public static int dayofweek(int dd,int mm,int yy)  //accessing date month year
 {
 	int y=yy-(14-mm)/12;					//for year
@@ -278,8 +293,7 @@ public static int dayofweek(int dd,int mm,int yy)  //accessing date month year
 	String a[]= {"sunday","monday","tuesday","wednesday","tursday","friday","saturday"};
 	System.out.println(a[d]);
 	String b[]= {"0","jan","feb","mar","april","may","june","july","aug","sep","oct","nov","dec"};
-	System.out.println("month--- "+b[mm]);
-	
+	System.out.println("month--- "+b[mm]);	
 	return d;
 }
 /*
@@ -295,6 +309,7 @@ public static void getcelsius(double f)
 }
 /*
  @get monthly payment..
+ Using formula...
  */
 public static void getmonthpayment(int P,int Y,double R)
 {
@@ -306,7 +321,8 @@ public static void getmonthpayment(int P,int Y,double R)
 	
 }
 /*
- @ get square rot value..
+ Function to find the square root value
+ @returns the square root value..
  */
 public static void getsqrt(double c)
 {
@@ -315,11 +331,11 @@ public static void getsqrt(double c)
 	while((Math.abs(t-c/t))>epsilon*t)
 	{
 		t=(c/t+t)/2.0;	
-	}
-		System.out.println(t);
+	}		System.out.println(t);
 }
 /*
- @ get the binary numbers ...from decimal value..
+ Function to get the binary numbers ...from decimal value..
+ @returns binary value...
  */
 public static String tobinaryString(int n)
 {
@@ -333,7 +349,8 @@ public static String tobinaryString(int n)
 	return bin;
 }
 /*
- *@swap Nibbles...
+ Function to perform the swap Nibbles...
+ @returns  the swapped binary numbers...
  */
 public static String swapNibble(String s) 
 {
@@ -373,7 +390,10 @@ public static String swapNibble(String s)
 	}
 	return swapedNibbles;
 }
-
+/*
+ Function to perform the binary to decimal value..
+ @returns the decimal value...
+ */
 public static int binaryToDecimal(String x) 	//binary to decimal value...
 {
 	int sum = 0, p = 0;  
@@ -389,7 +409,7 @@ public static int binaryToDecimal(String x) 	//binary to decimal value...
 	return sum;
 }
 /*
- @ Check Arrays returned String functions are equal..
+ Function to Check Arrays returned by two String functions are equal..or not
  */
 public static void getArrayequal(String str1, String str2)
 {
@@ -418,35 +438,6 @@ public static void getArrayequal(String str1, String str2)
 	 }
 }
 /*
- @..binary search...
- ........
- */
-//public static int binarySearch(String[] arr, String x) 
-//{ 
-//	Arrays.sort(arr);
-//    int l = 0, r = arr.length - 1; 
-//    while (l <= r)
-//    { 
-//        int m = (l+ r) / 2; 
-//        int res = x.compareTo(arr[m]); 
-//        if (res == 0) 
-//        {
-//            return m; 
-//        }
-//        else if (res > 0) 
-//        {	
-//            l = m + 1; 
-//        }
-//        else
-//        {
-//            r = m - 1; 
-//        }
-//    } 
-//
-//    return -1; 
-//} 
-
-/*
  * Generic Insertion Sort algorithm
  * 
  * @.... array
@@ -468,8 +459,8 @@ public static String []insertionSort(String s[])
 	return s;
 }
 /*
- Bubble sort..
- @return the sorted integer numbers..
+ Function to perform the Bubble sort..
+ @returns the sorted integer numbers..
  */
  public static  int[] bubble(int arr[]) 
 { 
@@ -489,7 +480,8 @@ public static String []insertionSort(String s[])
 	return arr;  
 }
  /*
-  Merge sort for string...
+ Function to perform the Merge sort for string...
+ @returns the sorted String values...
   */
  public static String[] mergeSort(String[] array)	//accessing the arrays..
  {
@@ -564,7 +556,8 @@ merging array....
      return merged;  
  }
 /*
-@ two Strings are anagram...
+Function to check two Strings are anagram...
+@returns the boolean function based on anagram function..
  */
  public static boolean  anagram(String s1,String s2)
 	{
@@ -603,16 +596,15 @@ merging array....
 			 {
 				 T temp=a[j];
 				 a[j]=a[j+1];
-				 a[j+1]=temp;
-						 
+				 a[j+1]=temp;			 
 			}
 		 }
 	 }
-	 return a;
-	 
+	 return a;	 
  }
  /*
-  @get prime numbers..
+  Function to get prime numbers..
+  @returns prime  numbers..
   */
  public static boolean getprimeno(int n)
  {
@@ -634,8 +626,6 @@ merging array....
  }
  /*
    * Finding if a number is Palindrome or not
-	 * 
-	 * @... number
 	 * @return true if Palindrome or else false
 	 */
 	public static void primePalindrome() {
@@ -656,7 +646,7 @@ merging array....
 	
 	public static boolean ispalindrome(int j) 
 	{
-		int   sum =0 ,e =j;
+		int   sum = 0 ,e=j;
 		while(j!=0) {
 			int r = j%10;
 			sum = (sum*10 ) +r;
@@ -669,36 +659,36 @@ merging array....
 	}
 
 /*
-	 Function to check if no is anagram or not
+	 Function to check if no is  prime anagram or not
+	 @returns prime anagram numbers..
 	 */
   public static void primeanagram() {
-	  ArrayList<Integer> ar=new ArrayList<Integer>();
-	  boolean b;
-	  for(int j=2;j<=1000;j++)
+  ArrayList<Integer> ar=new ArrayList<Integer>();
+  boolean b;
+  for(int j=2;j<=1000;j++)
+  {
+	  b=true;
+	  for(int i=2;i<j/2;i++)
 	  {
-		  b=true;
-		  for(int i=2;i<j/2;i++)
-		  {
-			  if(j%i==0) {
-			  b=false;
-			  break;
-		  }
-		  }
+		 if(j%i==0) {
+		  b=false;
+		  break;
+	      }
+		}
 	  if(b)
-		  ar.add(j);
-	 
+		  ar.add(j);	 
   }
 for(int i=0;i<ar.size()-1;i++) {
 	for(int j=i+1;j<ar.size();j++) {
 		if(anagram(ar.get(i),ar.get(j)))
 		{
-			System.out.println(ar.get(i)+ " "+ar.get(j) + " primeanagram numbers");
+		System.out.println(ar.get(i)+ " "+ar.get(j) + " primeanagram numbers");
 		}
 	}
 }
 }
   /*
-   to check the values are anagram or not
+   Function to check the values are anagram or not
    */
   public static boolean anagram(int n1,int n2)
   {
@@ -712,7 +702,8 @@ for(int i=0;i<ar.size()-1;i++) {
 	  return true;
   }
   /*
-   function to count the numbers
+   Function to count the numbers
+   @returns count...
    */
   public static int[] count(int n) {
 	  int[] count=new int[10];
@@ -729,25 +720,25 @@ for(int i=0;i<ar.size()-1;i++) {
  /*
   Function to do the binary search the word..
   */
-  public static  void binarysearch(String[] Sorted_arr,String find)
+  public static  void binarysearch(String[] s,String find)
   {
           int mid=0;
           int low=0;
-          int high=Sorted_arr.length-1;
+          int high=s.length-1;
           while(high>=low)
           {
                   mid=(low+high)/2;
 
-                  if(Sorted_arr[mid].equals(find))
+                  if(s[mid].equals(find))
                   {
                           System.out.println("the word->"+find+" is found");
                   break;
                   }
-                  else if(Sorted_arr[mid].compareTo(find)<0)
+                  else if(s[mid].compareTo(find)<0)
                   {
                           low=mid+1;
                   }
-                  else if(Sorted_arr[mid].compareTo(find)>0)
+                  else if(s[mid].compareTo(find)>0)
                           high=mid-1;
           }
           if(high<low)
@@ -755,7 +746,7 @@ for(int i=0;i<ar.size()-1;i++) {
 
   }
   /*
-   function to read the file...
+   Function to read the file for binary search..
    */
   public static String readfile(String file)
   {
@@ -777,7 +768,7 @@ for(int i=0;i<ar.size()-1;i++) {
 
   }
   /*
-   finding the number 
+  Function to find the number 
    @return low
    */
   public static int find() {
