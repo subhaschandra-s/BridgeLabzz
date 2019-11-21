@@ -1,5 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to do binary search the word
+ version:1.2
+ Filename:Binarysearch
+ Date:19/11/19
+ */
 package com.bridgelab.Algorithm;
-
 import com.bridgelab.Utility.utility;
 
 public class Binarysearch 

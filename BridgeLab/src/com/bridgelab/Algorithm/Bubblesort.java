@@ -1,5 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to do Bubblesort
+ version:1.2
+ Filename:Bubblesort
+ Date:19/11/19
+ */
 package com.bridgelab.Algorithm;
-
 import com.bridgelab.Utility.utility;
 
 public class Bubblesort 

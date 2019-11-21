@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to find coupon numbers using random function
+ version:1.2
+ Filename:Coupon
+ Date:19/11/19
+ */
 package com.bridgelab.Logical;
 
 import com.bridgelab.Utility.utility;

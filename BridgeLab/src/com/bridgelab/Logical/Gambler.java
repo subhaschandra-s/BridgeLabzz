@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function for Gambler program
+ version:1.2
+ Filename:Gambler
+ Date:19/11/19
+ */
 package com.bridgelab.Logical;
 
 public class Gambler 

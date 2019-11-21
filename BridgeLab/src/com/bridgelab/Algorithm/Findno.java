@@ -1,5 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to find the guessed the number
+ version:1.2
+ Filename:Findno
+ Date:19/11/19
+ */
 package com.bridgelab.Algorithm;
-
 import com.bridgelab.Utility.utility;
 
 public class Findno 

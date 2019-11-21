@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to do Mergesort
+ version:1.2
+ Filename:mergesort
+ Date:19/11/19
+ */
 package com.bridgelab.Algorithm;
 
 import com.bridgelab.Utility.utility;

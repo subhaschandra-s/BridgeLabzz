@@ -5,9 +5,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
+import org.hamcrest.Matcher;
+
+import com.bridgelab.Algorithm.UserDetails;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class utility<T>
 {
@@ -18,9 +26,9 @@ public class utility<T>
 		sc= new Scanner(System.in);
 		random = new Random();
 	}
-	/*
-	 Author:......
+	/** 
 	 Function to replace user name with full name....
+	 @param x v
 	 @return replacing the name...
 	 */
 	public static void replace(String s) //accessing the string from main method
@@ -30,7 +38,7 @@ public class utility<T>
 		System.out.println(v);    				//replaced name
 	}
 
-	/*
+	/**
 	 Function for flip coins program
 	 @returns heads percentage and tails percentage..
 	 */
@@ -48,7 +56,7 @@ public class utility<T>
 		System.out.println("tails percentage is"+(double)(100-(heads/times)*100));  //tails percenatge
 	}
 
-	/*
+	/**
 	Function to perform leap year program
 	Performs the operation
 	 */
@@ -66,7 +74,7 @@ public class utility<T>
 			System.out.println("enter valid year");
 		
 	}
-	/*
+	/**
 	Function to perform  nth power no program
 	@returns the power value...
 	 */
@@ -81,8 +89,9 @@ public class utility<T>
 		return power;
 	}
 	
-	/*
+	/**
 	Function to perform the Harmonic no program
+	@param s sum
 	@returns the nth harmonic value...
 	 */
 	public static void harmonic(int n)
@@ -98,8 +107,10 @@ public class utility<T>
 		System.out.println("total "+s);	
 	}
 	
-	/*
+	/**
 	 Function to find the prime factors
+	 @param n
+	 @returns integer values..
 	 */
 	public static void primefact(int n)
 	{
@@ -112,7 +123,7 @@ public class utility<T>
 				}
 	}	
 }
-	/*
+	/**
 	 Accessing the Integer value from Scanner..
 	 @returns integer value..
 	 */
@@ -120,7 +131,7 @@ public class utility<T>
 	{
 		return sc.nextInt();
 	}
-	/*
+	/**
 	 Accessing the double value from Scanner..
 	 @returns double value..
 	 */
@@ -128,7 +139,7 @@ public class utility<T>
 	{
 		return sc.nextDouble();
 	}
-  /*
+  /**
     Accessing the String value from Scanner..
     @returns String value..
  */	
@@ -140,7 +151,7 @@ public class utility<T>
 	{
 		return sc.next();
 	}
-	/*
+	/**
 	 for input random value
 	 */
 	public static int inputRandom(int size)
@@ -154,7 +165,7 @@ public class utility<T>
 		}
 		return 0;
 	}
-	/*
+	/**
 	 Function to read the two dimension array.
 	 @returns matrix values...
 	 */
@@ -171,7 +182,7 @@ public static int[][] readTwoDimensionArray(int m,int n)
 	}
 	return mat;
 }
-/*
+/**
  function to display the Matrix...
  */
 	
@@ -189,7 +200,7 @@ public static void dsiplayMatrix(int[][]mat)
 		pw.println();
 	}
 }
-/* Finding the triplets in an array whose sum is 0
+/**Finding the triplets in an array whose sum is 0
 * 
 * ... array
 * @return total number of triplets
@@ -213,7 +224,7 @@ public static int triplets(int[] array)
 	}
 	return count;
 }
-/*
+/**
  Quadratic function...using formula
  */
 public static void quadratic(double a,double b,double c)
@@ -233,7 +244,7 @@ public static void quadratic(double a,double b,double c)
 	}
 	
 }	
-/*
+/**
  to coupon numbers....
  */
 // return a random coupon between 0 and n-1
@@ -261,7 +272,7 @@ public static int collect(int n)
     return count;
 }
 
-/*
+/**
  * Finding minimum number of notes coming out for a fulfilling a particular
  * amount.
  * 
@@ -279,7 +290,7 @@ public static int[] getNotes(int amount) {
 	return notesCount;	
 }
 
-/*
+/**
  @get the day of week 
  Using formula...
  @returns the day of the week... 
@@ -296,22 +307,23 @@ public static int dayofweek(int dd,int mm,int yy)  //accessing date month year
 	System.out.println("month--- "+b[mm]);	
 	return d;
 }
-/*
+/**
  @get the celsius value using formula....
  * 
  */
 
-public static void getcelsius(double f)
+public static double getcelsius(double f)
 {
 	double c=(f-32)*5/9;   			//Fahrenheit to Celsius...
 	//double f=(c*9/5)+32;			//Celsius to Fahrenheit...
 	System.out.println(" celsius value is "+c);
+	return c;
 }
-/*
+/**
  @get monthly payment..
  Using formula...
  */
-public static void getmonthpayment(int P,int Y,double R)
+public static double getmonthpayment(int P,int Y,double R)
 {
 	int n=12*Y;
     double r=R/(12*100);
@@ -319,21 +331,24 @@ public static void getmonthpayment(int P,int Y,double R)
     double payment=P*r/(1-Math.pow(1+r, -n));
     System.out.println("monthly payment is-->"+payment);
 	
+    return payment;
 }
-/*
+/**
  Function to find the square root value
  @returns the square root value..
  */
-public static void getsqrt(double c)
+public static double getsqrt(double c)
 {
 	double t=c;
 	double epsilon=1.0e-15;
 	while((Math.abs(t-c/t))>epsilon*t)
 	{
 		t=(c/t+t)/2.0;	
-	}		System.out.println(t);
+	}
+	System.out.println(t);
+	return t;
 }
-/*
+/**
  Function to get the binary numbers ...from decimal value..
  @returns binary value...
  */
@@ -348,7 +363,7 @@ public static String tobinaryString(int n)
 	}
 	return bin;
 }
-/*
+/**
  Function to perform the swap Nibbles...
  @returns  the swapped binary numbers...
  */
@@ -390,7 +405,7 @@ public static String swapNibble(String s)
 	}
 	return swapedNibbles;
 }
-/*
+/**
  Function to perform the binary to decimal value..
  @returns the decimal value...
  */
@@ -408,7 +423,7 @@ public static int binaryToDecimal(String x) 	//binary to decimal value...
 	}
 	return sum;
 }
-/*
+/**
  Function to Check Arrays returned by two String functions are equal..or not
  */
 public static void getArrayequal(String str1, String str2)
@@ -437,7 +452,7 @@ public static void getArrayequal(String str1, String str2)
 		 System.out.println("Arrays are equals"); 
 	 }
 }
-/*
+/**
  * Generic Insertion Sort algorithm
  * 
  * @.... array
@@ -458,7 +473,7 @@ public static String []insertionSort(String s[])
 	}
 	return s;
 }
-/*
+/**
  Function to perform the Bubble sort..
  @returns the sorted integer numbers..
  */
@@ -479,7 +494,7 @@ public static String []insertionSort(String s[])
     }
 	return arr;  
 }
- /*
+ /**
  Function to perform the Merge sort for string...
  @returns the sorted String values...
   */
@@ -522,7 +537,7 @@ public static String []insertionSort(String s[])
 
      return sorted;
  }
-/*
+/**
 merging array....
  */
  private static String[] mergeArray(String[] left, String[] right)
@@ -555,7 +570,7 @@ merging array....
      }
      return merged;  
  }
-/*
+/**
 Function to check two Strings are anagram...
 @returns the boolean function based on anagram function..
  */
@@ -583,7 +598,7 @@ Function to check two Strings are anagram...
 			return false;
 		}
 	}
- /*
+ /**
   @Generic method to called...
   */
  public static <T extends Comparable<T>> T[] genericSort(T[] a)
@@ -602,7 +617,7 @@ Function to check two Strings are anagram...
 	 }
 	 return a;	 
  }
- /*
+ /**
   Function to get prime numbers..
   @returns prime  numbers..
   */
@@ -624,7 +639,7 @@ Function to check two Strings are anagram...
 		}
 	return false;
  }
- /*
+ /**
    * Finding if a number is Palindrome or not
 	 * @return true if Palindrome or else false
 	 */
@@ -646,10 +661,10 @@ Function to check two Strings are anagram...
 	
 	public static boolean ispalindrome(int j) 
 	{
-		int   sum = 0 ,e=j;
+		int   sum = 0 ,e = j;
 		while(j!=0) {
 			int r = j%10;
-			sum = (sum*10 ) +r;
+			sum = (sum*10 )+r;
 			j=j/10;
 		}
 	if(sum ==e) {
@@ -658,7 +673,7 @@ Function to check two Strings are anagram...
 	return false;
 	}
 
-/*
+/**
 	 Function to check if no is  prime anagram or not
 	 @returns prime anagram numbers..
 	 */
@@ -687,8 +702,8 @@ for(int i=0;i<ar.size()-1;i++) {
 	}
 }
 }
-  /*
-   Function to check the values are anagram or not
+  /**
+   Function to check the values of counts. are equal  or not
    */
   public static boolean anagram(int n1,int n2)
   {
@@ -701,7 +716,7 @@ for(int i=0;i<ar.size()-1;i++) {
 	  }
 	  return true;
   }
-  /*
+  /**
    Function to count the numbers
    @returns count...
    */
@@ -717,7 +732,7 @@ for(int i=0;i<ar.size()-1;i++) {
 	  return count;
   }
   
- /*
+ /**
   Function to do the binary search the word..
   */
   public static  void binarysearch(String[] s,String find)
@@ -745,7 +760,7 @@ for(int i=0;i<ar.size()-1;i++) {
                   System.out.println("the word->"+find+" is not found");
 
   }
-  /*
+  /**
    Function to read the file for binary search..
    */
   public static String readfile(String file)
@@ -767,7 +782,7 @@ for(int i=0;i<ar.size()-1;i++) {
   return str;
 
   }
-  /*
+  /**
   Function to find the number 
    @return low
    */
@@ -783,9 +798,46 @@ for(int i=0;i<ar.size()-1;i++) {
 	else
 		low=mid+1;
 	  }
-	return high;
-	  
+	return high;	  
   }
+/**
+ *Function for regex program
+ *@returns the message
+ 
+ */
+  public static String ConvertString(UserDetails userDetails,String message){
+	  String REGEX_NAME="<<name>>";
+	  String REGEX_FULLNAME="<<fullname>>";
+	  String REGEX_MOBILE_NO="xxxxxxxxxx";
+	  String REGEX_DATE="xx/xx/xxxx";
+
+	  Pattern p = Pattern.compile(REGEX_NAME);
+	      java.util.regex.Matcher m = p.matcher(message);
+	      message = m.replaceAll(userDetails.getfName());
+
+	  p = Pattern.compile(REGEX_FULLNAME);
+	  m = p.matcher(message);
+	  message = m.replaceAll(userDetails.getfName()+" "+userDetails.getlName());
+
+	  p = Pattern.compile(REGEX_MOBILE_NO);
+	  m = p.matcher(message);
+	  message = m.replaceAll(userDetails.mobileNo());
+
+	  p = Pattern.compile(REGEX_DATE);
+	  m = p.matcher(message);
+	  message = m.replaceAll(userDetails.date());
+
+	  return message;
+	  }
+  
+  /**
+   Function to get the date from database (Sql)
+   @returns date
+   */
+  public static String GetFormatedDate(Date date){
+	  SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+	  return sdf.format(date);
+	  }
 }
 
 

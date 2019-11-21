@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to do decimal to binary
+ version:1.2
+ Filename:Tobin
+ Date:19/11/19
+ */
 package com.bridgelab.Junit_test;
 
 import com.bridgelab.Utility.utility;

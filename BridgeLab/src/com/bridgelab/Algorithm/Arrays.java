@@ -1,5 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to check returned by two String arrays are equal
+ version:1.2
+ Filename:Arrays
+ Date:19/11/19
+ */
 package com.bridgelab.Algorithm;
-
 import com.bridgelab.Utility.utility;
 
 public class Arrays

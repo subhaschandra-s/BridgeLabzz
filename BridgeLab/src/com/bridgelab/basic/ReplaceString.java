@@ -1,5 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to replace the name with fullname
+ version:1.2
+ Filename:ReplaceString
+ Date:19/11/19
+ */
 package com.bridgelab.basic;
-
 import com.bridgelab.Utility.utility;
 
 public class ReplaceString 

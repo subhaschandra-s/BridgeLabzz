@@ -1,3 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to find Monthly payment
+ version:1.2
+ Filename:Monthly_payment
+ Date:19/11/19
+ */
+
 package com.bridgelab.Junit_test;
 
 import com.bridgelab.Utility.utility;

@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to find Tripplets
+ version:1.2
+ Filename:Tripplets
+ Date:19/11/19
+ */
 package com.bridgelab.Functional;
 
 import com.bridgelab.Utility.utility;

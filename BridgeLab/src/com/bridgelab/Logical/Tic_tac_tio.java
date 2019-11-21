@@ -1,3 +1,9 @@
+/**
+ Author:Subhas
+ purpose:function for Tictac game program
+ Filename:Tictac
+ Date:19/11/19
+ */
 package com.bridgelab.Logical;
 
 import com.bridgelab.Utility.utility;

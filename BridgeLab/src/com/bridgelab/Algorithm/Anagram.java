@@ -1,5 +1,11 @@
+/**
+ Author:Subhas
+ purpose:function to check the Anagram 
+ version:1.2
+ Filename:Anagram
+ Date:19/11/19
+ */
 package com.bridgelab.Algorithm;
-
 import java.util.Scanner;
 
 import com.bridgelab.Utility.utility;

@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to do stopwatch program
+ version:1.2
+ Filename:stopwatch
+ Date:19/11/19
+ */
 package com.bridgelab.Logical;
 
 import com.bridgelab.Utility.utility;

@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to do twodimensional Array
+ version:1.2
+ Filename:Array2d
+ Date:19/11/19
+ */
 package com.bridgelab.Functional;
 
 import com.bridgelab.Utility.utility;

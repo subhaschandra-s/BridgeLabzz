@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to get the returned amount through counting the amounts
+ version:1.2
+ Filename:vending_machine
+ Date:19/11/19
+ */
 package com.bridgelab.Junit_test;
 
 import com.bridgelab.Utility.utility;

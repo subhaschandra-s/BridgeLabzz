@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to Square root value
+ version:1.2
+ Filename:Sqrt
+ Date:19/11/19
+ */
 package com.bridgelab.Junit_test;
 
 import com.bridgelab.Utility.utility;

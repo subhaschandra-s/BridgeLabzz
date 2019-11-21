@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to find the distance using formula
+ version:1.2
+ Filename:distance
+ Date:19/11/19
+ */
 package com.bridgelab.Functional;
 
 import com.bridgelab.Utility.utility;

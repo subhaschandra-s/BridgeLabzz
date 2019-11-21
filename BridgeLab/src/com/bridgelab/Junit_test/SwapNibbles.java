@@ -1,3 +1,10 @@
+/**
+ Author:Subhas
+ purpose:function to Swap the nibbles
+ version:1.2
+ Filename:SwapNibbles
+ Date:19/11/19
+ */
 package com.bridgelab.Junit_test;
 
 import com.bridgelab.Utility.utility;
