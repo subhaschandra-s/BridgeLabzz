@@ -8,7 +8,7 @@ public class BalancedParentheses
 public static void main(String[] args) 
 {
    try 
-   { 
+   {
     Stack<String> stack = new   Stack<String>();
     boolean res =false , flag=true;
     System.out.println("Enter the equation to find paranthesis is banlanced or not ");
