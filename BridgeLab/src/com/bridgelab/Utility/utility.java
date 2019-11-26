@@ -59,19 +59,11 @@ public class utility<T>
 	/**
 	Function to perform leap year program
 	Performs the operation
+	 * @return 
 	 */
-	public static void leapyr(int n)
+	public static boolean isleapyr(int n)
 	{
-		if(n>=1000 && n<=10000)
-		{
-		 if(n%400==0||n%4==0 && n%100!=0)	
-			System.out.println(n+" is leap year");
-			else
-			
-				System.out.println(n+" is not a leap year");
-		}
-		else
-			System.out.println("enter valid year");
+		return ((n % 4 == 0) && (n % 100 != 0)) || (n % 400 == 0);
 		
 	}
 	/**
@@ -496,80 +488,56 @@ public static String []insertionSort(String s[])
 }
  /**
  Function to perform the Merge sort for string...
+ * @return 
  @returns the sorted String values...
   */
- public static String[] mergeSort(String[] array)	//accessing the arrays..
- {
-     String [] sorted = new String[array.length];
-     if (array.length == 1)
-     {
-         sorted = array;
-     } 
-     else
-     {
-         int mid = array.length/2;
-         String[] left = null; 
-         String[] right = null;
-         if ((array.length % 2) == 0)
-         {
-             left = new String[array.length/2];
-             right = new String[array.length/2];
-         }
-         else 
-         { 
-             left = new String[array.length/2];
-             right = new String[(array.length/2)+1];
-         }
-         int x=0;
-         int y=0;
-         for ( ; x < mid; x++)
-         {
-             left[x] = array[x];
-         }
-         for ( ; x < array.length; x++)
-         {
-             right[y++] = array[x];
-         }
-         left = mergeSort(left);
-         right = mergeSort(right);
-         sorted = mergeArray(left,right);
-     }
+ public static String[] mergesort(String a[], int l,int h)
+	{
+		if(l<h) 
+		{
+			int m=(l+h)/2;
+			mergesort(a,l,m);
+			mergesort(a,m+1,h);
+			merge(a,l,m,h);
+		}
+		return a;
+		
+		}
+	public static void merge(String a[],int l,int m,int h)
+	{
+		String b[]=new String[h-l+1];
+		int i=l,k=0;
+		int j=m+1;
+		while(i<=m && j<=h)
+		{
+			if(a[i].compareTo(a[j])<0)
+				b[k++]=a[i++];
+			else
+				b[k++]=a[j++];
+		}
+		while(i<=m)
+		{
+			b[k++]=a[i++];
+		}
+		while(j<=h)
+		{
+			b[k++]=a[j++];
+		}
+		for(k=0;k<b.length;k++)
+		{
+			a[l+k]=b[k];
+					
+		}
+	}
+	
+	public static void printarray(String a[]) 
+ { 
+     int n = a.length; 
+     for (int i=0; i<n; ++i) 
+         System.out.print(a[i] + " "); 
+     System.out.println(); 
+ } 
 
-     return sorted;
- }
-/**
-merging array....
- */
- private static String[] mergeArray(String[] left, String[] right)
- {
-     String[] merged = new String[left.length+right.length];
-     int lIndex = 0;
-     int rIndex = 0;
-     int mIndex = 0;
-     int comp = 0;
-     while (lIndex < left.length || rIndex < right.length)
-     {
-         if (lIndex == left.length)
-         {
-             merged[mIndex++] = right[rIndex++];
-         } else if (rIndex == right.length) 
-         {
-             merged[mIndex++] = left[lIndex++];
-         } 
-         else
-         {  
-             comp = left[lIndex].compareTo(right[rIndex]);
-             if (comp > 0) {
-                 merged[mIndex++] = right[rIndex++];
-             } else if (comp < 0) {
-                 merged[mIndex++] = left[lIndex++];
-             } else { 
-                 merged[mIndex++] = left[lIndex++];
-             }
-         }   
-     }
-     return merged;  
- }
 /**
 Function to check two Strings are anagram...
 @returns the boolean function based on anagram function..
@@ -623,7 +591,7 @@ Function to check two Strings are anagram...
   */
  public static boolean getprimeno(int n)
  {
-	 for(int i=1;i<n;i++)
+	 for(int i=1;i<n/2;i++)
 		{
 			boolean isPrime=true;
 			for(int j=2;j<i;j++)
@@ -639,6 +607,21 @@ Function to check two Strings are anagram...
 		}
 	return false;
  }
+ 
+ /**
+	 * function to chekc if given no is prime or not
+	 * 
+	 * @param n thenumber which to check for prime
+	 * @return true if prime false if not
+	 */
+	public static boolean isPrime(int n) {
+		for (int i = 2; i <= n / 2; i++) {
+			if (n % i== 0) {
+				return false;
+			}
+		}
+		return true;
+	}
  /**
    * Finding if a number is Palindrome or not
 	 * @return true if Palindrome or else false
@@ -838,6 +821,61 @@ for(int i=0;i<ar.size()-1;i++) {
 	  SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 	  return sdf.format(date);
 	  }
+  /**
+   * Calculating calendar in 2D array
+   * 
+   * @param month
+   * @param year
+   * @return total number of days in the entered month and year
+   */
+  public static int[][] calenderQueue(int month, int year) 
+  {
+  	int year1, month1, x, day = 1, day1;
+  	year1 = year - (14 - month) / 12;
+  	x = year1 + (year1 / 4) - (year1 / 100) + (year1 / 400);
+  	month1 = month + 12 * ((14 - month) / 12) - 2;
+  	day1 = (day + x + (31 * month1) / 12) % 7;
+  	String[] monthName = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
+  			"October", "November", "December" };
+  	int[] monthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+  	int monthDay = 0;
+  	for (int i = 0; i < monthDays.length; i++) {
+  		if (i == month - 1) {
+  			monthDay = monthDays[i];
+  		}
+  	}
+  	int[][] totalDays = new int[6][7];
+  	boolean leap = utility.isleapyr(year);
+  	if (leap && month == 1) {
+  		monthDay = 29;
+  	}
+  	int z = 1;
+  	for (int i = 0; i < 6; i++) {
+  		for (int j = 0; j < 7; j++) {
+  			if (i == 0 && j < day1) {
+  				totalDays[i][j] = -1;
+  			} else if (z <= monthDay) {
+  				totalDays[i][j] = z;
+  				z++;
+  			} else {
+  				totalDays[i][j] = -1;
+  			}
+  		}
+  	}
+  	for (int i = 0; i < 12; i++) {
+  		if (month == i + 1) {
+  			System.out.print(monthName[i] + " " + year);
+  		}
+  	}
+  	
+		System.out.println();
+	
+		return totalDays;
+		  
+
+  } 
+  	
+  
 }
 
 

@@ -13,12 +13,10 @@ public class Mergesort
 {
 public static void main(String[] args) 
 {
-	String[] array = { "rocky","dallas","dheera","dush","xiome"};
+	String[] a = { "rocky","dallas","dheera","dush","xiome"};
 
-    String[] st = utility.mergeSort(array);
-    for (int i = 0; i < st.length; i++)
-    {
-       System.out.print(st[i] + " ");
-    }
+    String[] st = utility.mergesort(a,0,a.length-1);
+    utility.printarray(a);
+  
 }
 }

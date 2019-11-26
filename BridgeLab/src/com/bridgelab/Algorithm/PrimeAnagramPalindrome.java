@@ -1,7 +1,7 @@
 /**
  Author:Subhas
 
- purpose:function to find the prime anagram and prime palindrome
+ purpose:function to find the prime anagram and prime Palindrome
  version:1.2
  Filename:PrimeAnagramPalindrome
  Date:19/11/19
@@ -16,7 +16,7 @@ public static void main(String[] args)
 {
 	System.out.println("Enter the Range");
 	int n = utility.readInt();
-	utility.getprimeno(n);
+	utility.isPrime(n);
 	utility.primePalindrome();
 	
 	 utility.primeanagram();
