@@ -17,6 +17,7 @@ public static void main(String[] args) throws Exception
 	for(int i=0;i<s.length;i++)
 	{
 		al.add(s[i]);
+		
 	}
 	
 	if(al.search(s, find))
