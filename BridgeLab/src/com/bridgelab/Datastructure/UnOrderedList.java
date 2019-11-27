@@ -22,7 +22,7 @@ public static void main(String[] args) throws Exception
 	
 	if(al.search(s, find))
 	{
-		al.remove(find);
+		al.remove1(find);
 	}
 	else
 	{

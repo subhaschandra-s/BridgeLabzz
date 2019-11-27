@@ -36,7 +36,9 @@ public static void main(String[] args)
      if(res) 
      {
       System.out.println("balanced");
-      }else {
+      }
+     else
+     {
     	  System.out.println("not balanced");
       }
     }

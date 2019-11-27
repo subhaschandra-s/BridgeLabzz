@@ -29,10 +29,12 @@ public class BankingCashCounter {
 				{
 					count+=1;
 				}
-				else if(option==2) {
+				else if(option==2)
+				{
 					count+=2;
 				}
-				else {
+				else
+				{
 					System.out.println("Invalied Option");
 				}
 			}

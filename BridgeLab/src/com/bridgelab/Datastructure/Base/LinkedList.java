@@ -96,6 +96,23 @@ public class LinkedList<T>
 	 
 	
  }
+ public void remove1(T item) 
+ {
+		Node<T> n = head;
+		Node<T> prev = null;
+		if (head.data.equals(item)) {
+			head = head.next;
+			return;
+		}
+		while (!n.data.equals(item)) {
+			prev = n;
+			n = n.next;
+		}
+		n = n.next;
+		prev.next = n;
+
+	}
+ 
  public <T extends Comparable<T>> void remove(T data)
  {
 	 Node<T> current=head;
